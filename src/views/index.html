@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio SO</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .filter-group,
+        .process-count {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .checkbox-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+        }
+
+        input[type="number"] {
+            width: 200px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .priority-0 {
+            color: #28a745;
+        }
+
+        .priority-1 {
+            color: #dc3545;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Monitor de Procesos PC</h1>
+    <div class="controls">
+        <div class="filter-group">
+            <label class="checkbox-wrapper">
+                <input type="checkbox" id="filterCPU" checked>
+                Filtrar por CPU
+            </label>
+            <label class="checkbox-wrapper">
+                <input type="checkbox" id="filterMemory">
+                Filtrar por Memoria
+            </label>
+        </div>
+        <div class="process-count">
+            <label for="processCount">Número de procesos:</label>
+            <input type="number" id="processCount" placeholder="Añade el número de procesos que desea mostrar">
+        </div>
+    </div>
+    <table id="processTable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre del Proceso</th>
+                <th>CPU (%)</th>
+                <th>Memoria (MB)</th>
+                <th>Usuario</th>
+                <th>Prioridad</th>
+                <th>Expulsivo</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script src="../renderer.js"></script>
+
+</html>
